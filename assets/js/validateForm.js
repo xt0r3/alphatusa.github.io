@@ -4,6 +4,7 @@ function verifyForm(id){//Name required, Email required, and matches some regexp
     let email = document.getElementById(id + "-email");
     let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let message = document.getElementById(id + "-message");
+    let btn = document.getElementById(id + "-button");
     let nameText = name.value;
     let emailText = email.value;
     let messageText = message.value;
@@ -41,6 +42,11 @@ function verifyForm(id){//Name required, Email required, and matches some regexp
     }
     else{
         message.setCustomValidity('');
+    }
+
+    if(btn.value !== "Küldés"){//Ongoing send request
+        console.log(btn.value);
+        passedCheck = false;
     }
 
     // RETURN

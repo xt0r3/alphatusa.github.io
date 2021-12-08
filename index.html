@@ -25,15 +25,20 @@
             crossorigin="anonymous"></script>
     <script>
         function SubForm (){
+            let btn = document.getElementById('form1-button');
+            btn.setAttribute('value', 'Küldés folyamatban');
+
             $.ajax({
                 url:"https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
                 type:"post",
                 data:$("#form1").serializeArray(),
                 success: function(){
-                    alert("Sikeres üzenetküldés!")
+                    btn.setAttribute('value', 'Küldés');
+                    alert("Sikeres üzenetküldés!");
                 },
                 error: function(){
-                    alert("Hiba történt az üzenet rögzítése során. Kérem próbálja újra!")
+                    btn.setAttribute('value', 'Küldés');
+                    alert("Hiba történt az üzenet rögzítése során. Kérem próbálja újra!");
                 }
             });
         }
@@ -220,26 +225,28 @@
             <h2 class="major" id="kapcsolat">Üzenjen nekünk!</h2>
             <p>Ha bármilyen kérdése van a versennyel kapcsolatban vagy szívesen részt támogatna minket, bátran keressen
                 meg minket emailen vagy küldjön üzenetet az alábbi mezők segítségével!</p>
-            <form id="form1" novalidate>
+
+            <form id="form1">
                 <div class="fields">
                     <div class="field">
                         <label for="form1-name">Név</label>
-                        <input id="form1-name" name="name" type="text" required/>
+                        <input id="form1-name" name="name" type="text"/>
                     </div>
                     <div class="field">
                         <label for="form1-email">Email</label>
-                        <input id="form1-email" name="email" type="email" required/>
+                        <input id="form1-email" name="email" type="email"/>
                     </div>
                     <div class="field">
                         <label for="form1-message">Üzenet</label>
-                        <textarea id="form1-message" name="message" required rows="4"></textarea>
+                        <textarea id="form1-message" name="message" rows="4"></textarea>
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="button" onclick="if(verifyForm('form1')){SubForm();}" value="Küldés"/></li>
+                    <li><input type="button" id="form1-button" onclick="if(verifyForm('form1')){SubForm();}" value="Küldés"/></li>
                 </ul>
             </form>
             <script>initForm('form1');</script>
+
             <ul class="contact">
                 <li class="icon solid fa-envelope"><a href="#">alphatusa@gmail.com</a></li>
             </ul>
