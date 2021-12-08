@@ -28,10 +28,10 @@
                 type:"post",
                 data:$("#myForm").serializeArray(),
                 success: function(){
-                    alert("Form Data Submitted :)")
+                    alert("Sikeres üzenetküldés!")
                 },
                 error: function(){
-                    alert("There was an error :(")
+                    alert("Hiba történt az üzenet rögzítése során. Kérem próbálja újra!")
                 }
             });
         }
@@ -218,7 +218,7 @@
             <h2 class="major" id="kapcsolat">Üzenjen nekünk!</h2>
             <p>Ha bármilyen kérdése van a versennyel kapcsolatban vagy szívesen részt támogatna minket, bátran keressen
                 meg minket emailen vagy küldjön üzenetet az alábbi mezők segítségével!</p>
-            <form>
+            <form id="myForm">
                 <div class="fields">
                     <div class="field">
                         <label for="name">Név</label>
