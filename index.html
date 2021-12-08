@@ -17,6 +17,25 @@
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     <link href="assets/css/main.css" rel="stylesheet"/>
     <script src="./assets/js/toggle.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:"https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
+                type:"post",
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                    alert("Form Data Submitted :)")
+                },
+                error: function(){
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
 
     <noscript>
         <link href="assets/css/noscript.css" rel="stylesheet"/>
@@ -108,7 +127,7 @@
         <!-- Four -->
         <section class="wrapper alt style1" id="four">
             <div class="inner">
-                <h2 class="major">Szervezők és támogatók</h2>
+                <h2 class="major">Szervezők</h2>
                 <p>Ismerjék meg a verseny mögött álló szervezői csapatot!</p>
                 <section class="features">
                     <article>
@@ -199,7 +218,7 @@
             <h2 class="major" id="kapcsolat">Üzenjen nekünk!</h2>
             <p>Ha bármilyen kérdése van a versennyel kapcsolatban vagy szívesen részt támogatna minket, bátran keressen
                 meg minket emailen vagy küldjön üzenetet az alábbi mezők segítségével!</p>
-            <form action="mailto:alphatusa2022@gmail.com" method="post">
+            <form>
                 <div class="fields">
                     <div class="field">
                         <label for="name">Név</label>
@@ -215,7 +234,7 @@
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="submit" value="Küldés"/></li>
+                    <li><input type="button" onclick="SubForm();" value="Küldés"/></li>
                 </ul>
             </form>
             <ul class="contact">
