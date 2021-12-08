@@ -11,6 +11,8 @@
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     <link href="assets/css/main.css" rel="stylesheet"/>
     <script src="./assets/js/toggle.js"></script>
+    <script src="./assets/js/validateForm.js"></script>
+    <script src="./assets/js/initForm.js"></script>
     <script
             src="https://code.jquery.com/jquery-3.4.1.js"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
@@ -20,7 +22,7 @@
             $.ajax({
                 url:"https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
                 type:"post",
-                data:$("#myForm").serializeArray(),
+                data:$("#form2").serializeArray(),
                 success: function(){
                     alert("Sikeres üzenetküldés!")
                 },
@@ -204,25 +206,26 @@
             <h2 class="major" id="kapcsolat">Üzenjen nekünk!</h2>
             <p>Ha bármilyen kérdése van a versennyel kapcsolatban vagy szívesen részt támogatna minket, bátran keressen
                 meg minket emailen vagy küldjön üzenetet az alábbi mezők segítségével!</p>
-            <form id="myForm">
+            <form id="form2" novalidate>
                 <div class="fields">
                     <div class="field">
-                        <label for="name">Név</label>
-                        <input id="name" name="name" type="text"/>
+                        <label for="form2-name">Név</label>
+                        <input id="form2-name" name="name" type="text" required/>
                     </div>
                     <div class="field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email"/>
+                        <label for="form2-email">Email</label>
+                        <input id="form2-email" name="email" type="email" required/>
                     </div>
                     <div class="field">
-                        <label for="message">Üzenet</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
+                        <label for="form2-message">Üzenet</label>
+                        <textarea id="form2-message" name="message" required rows="4"></textarea>
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="button" onclick="SubForm();" value="Küldés"/></li>
+                    <li><input type="button" onclick="if(verifyForm('form2')){SubForm();}" value="Küldés"/></li>
                 </ul>
             </form>
+            <script>initForm('form2');</script>
             <ul class="contact">
                 <li class="icon solid fa-envelope"><a href="#">alphatusa@gmail.com</a></li>
             </ul>
