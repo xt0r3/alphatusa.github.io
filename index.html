@@ -16,28 +16,28 @@
     <meta content="Alpha-tusa" name="author"/>
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     <link href="assets/css/main.css" rel="stylesheet"/>
-    <link rel="canonical" href="https://alphatusa.hu/" />
+    <link href="https://alphatusa.hu/" rel="canonical"/>
     <script src="./assets/js/toggle.js"></script>
     <script src="./assets/js/validateForm.js"></script>
     <script src="./assets/js/initForm.js"></script>
     <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
+            crossorigin="anonymous"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        function SubForm (){
+        function SubForm() {
             let btn = document.getElementById('form1-button');
             btn.setAttribute('value', 'Küldés folyamatban');
 
             $.ajax({
-                url:"https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
-                type:"post",
-                data:$("#form1").serializeArray(),
-                success: function(){
+                url: "https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
+                type: "post",
+                data: $("#form1").serializeArray(),
+                success: function () {
                     btn.setAttribute('value', 'Küldés');
                     alert("Sikeres üzenetküldés!");
                 },
-                error: function(){
+                error: function () {
                     btn.setAttribute('value', 'Küldés');
                     alert("Hiba történt az üzenet rögzítése során. Kérem próbálja újra!");
                 }
@@ -48,7 +48,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3HNB4YBCS3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'G-3HNB4YBCS3');
@@ -88,7 +92,8 @@
     <section id="banner">
         <div class="inner">
             <h2>Alpha-tusa</h2>
-            <p>Légy te is etikus hacker!<br>Játékos informatikai vetélkedőt hirdetünk 8-16 éves diákok számára!</p>
+            <p>Légy te is etikus hacker!<br>Játékos informatikai vetélkedőt hirdetünk 8-16 éves diákok és családjaik
+                számára!</p>
         </div>
     </section>
 
@@ -101,9 +106,17 @@
                 <img alt="" class="image" src="images/versenyrol.jpg"/>
                 <div class="content">
                     <h2 class="major">A versenyről</h2>
-                    <p>Játékos vetélkedőt hirdetünk tavaszra, ahol a cél nem a győzelem, hanem az informatika
-                        élvezetének átadása. A verseny egy interaktív online felületen kerül megrendezésre és a
-                        legjobbak értékes nyereményekkel gazdagodhatnak. A részvétel díjmentes.</p>
+                    <p>
+                        Csapatos kalandra hívunk, ahol a gondolkodás lesz a legfőbb segítségetek.<br>
+                        Etikus hackerek bőrébe bújva oldhattok meg kihívásokat, hogy meghiúsítsátok a gonosz Hadeon
+                        ravasz terveit.<br>
+                        Ha sikerül, nemcsak egy bűnbandát kapcsoltok le, hanem belépést is nyerhettek az etikus hackerek
+                        Alpha-klubjába!<br>
+                        60-90 perc kihívásokkal teli izgalom, melynek során sok szellemi és fizikai próbatétel vár Rátok -
+                        mindezt online.
+                        Semmiféle előzetes programozástudás nem szükséges, a fejtörés azonban elengedhetetlen.
+                        A vetélkedőn értékes tárgyjutalmakat nyerhettek.
+                    </p>
                 </div>
             </div>
         </section>
@@ -114,9 +127,13 @@
                 <img alt="" class="image" src="images/kinekszol.jpg"/>
                 <div class="content">
                     <h2 class="major">Kinek szól?</h2>
-                    <p>A vetélkedő több kategóriában kerül megrendezésre, a 8-16 éves korosztály minden tagjának lesz
-                        megfelelő kihívást biztosító feladatsor. A versenyhez informatikai előismeretekre nincs szükség,
-                        elég, ha valaki szívesen gondolkodik fejtörést igénylő problémákon.<br>
+                    <p>
+                        A versenyhez informatikai előismeretekre nincs szükség,
+                        elég, ha valaki szereti a titkos küldetéseket, a fejtörőket, és nem idegenkedik a a számítógép
+                        használatától.<br>
+                        Ha többen gondolkodnátok együtt, az sem gond, a nevezés 1-4 fős csapatok számára nyitott.<br>
+                        A vetélkedő több kategóriában kerül megrendezésre, a 8-16 éves korosztály minden tagjának lesz
+                        megfelelő kihívást biztosító feladatsor.<br>
                         I. kategória: 3-4. osztály<br>
                         II. kategória: 5-6. osztály<br>
                         III. kategória: 7-8. osztály<br>
@@ -189,9 +206,9 @@
     <!-- Footer -->
     <section id="footer">
         <div class="inner">
-            <h2 class="major" id="kapcsolat">Üzenjen nekünk!</h2>
-            <p>Ha bármilyen kérdése van a versennyel kapcsolatban vagy szívesen támogatna minket, bátran keressen
-                meg minket emailen vagy küldjön üzenetet az alábbi mezők segítségével!</p>
+            <h2 class="major" id="kapcsolat">Üzenj nekünk!</h2>
+            <p>Ha bármilyen kérdésed van a versennyel kapcsolatban vagy szívesen támogatnál minket, bátran keress
+                meg minket emailen vagy küldj üzenetet az alábbi mezők segítségével!</p>
 
             <form id="form1">
                 <div class="fields">
@@ -209,7 +226,8 @@
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="button" id="form1-button" onclick="if(verifyForm('form1')){SubForm();}" value="Küldés"/></li>
+                    <li><input id="form1-button" onclick="if(verifyForm('form1')){SubForm();}" type="button"
+                               value="Küldés"/></li>
                 </ul>
             </form>
             <script>initForm('form1');</script>

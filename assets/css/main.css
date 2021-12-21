@@ -3080,6 +3080,13 @@ input, select, textarea {
 
 		}
 
+/* Hacker-image */
+
+.hacker-image{
+	background-image: url('../../images/hacker-image.jpeg') !important;
+	background-size: contain;
+}
+
 /* Header */
 
 	#header {
