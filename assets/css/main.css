@@ -2879,14 +2879,17 @@ input, select, textarea {
 		font-family: Raleway, Helvetica, sans-serif;
 		font-size: 0.8em;
 		font-weight: 700;
-		height: 3.75em;
+		height: auto;
 		letter-spacing: 0.1em;
-		line-height: 3.75em;
-		padding: 0 2.25em;
+		/* line-height: 3.75em; */
+		padding: 1.8em 2.25em;
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		white-space: nowrap;
+		white-space: normal;
+		/*
+		ADDED BY KORNEL
+		 */
 	}
 
 		input[type="submit"]:hover,
@@ -2990,6 +2993,16 @@ input, select, textarea {
 			input[type="button"],
 			button,
 			.button {
+				/*
+				padding: 0;
+				 */
+				/*
+				ADDED BY KORNEL
+				 */
+				max-width: 80%;
+				height: auto;
+				margin-bottom: 20px;
+
 			}
 
 		}
