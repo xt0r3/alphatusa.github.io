@@ -10,28 +10,28 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
     <link href="assets/css/main.css" rel="stylesheet"/>
-    <link rel="canonical" href="https://alphatusa.hu/" />
+    <link href="https://alphatusa.hu/" rel="canonical"/>
     <script src="./assets/js/toggle.js"></script>
     <script src="./assets/js/validateForm.js"></script>
     <script src="./assets/js/initForm.js"></script>
     <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
+            crossorigin="anonymous"
             integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"></script>
+            src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
-        function SubForm (){
+        function SubForm() {
             let btn = document.getElementById('form2-button');
             btn.setAttribute('value', 'Küldés folyamatban');
 
             $.ajax({
-                url:"https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
-                type:"post",
-                data:$("#form2").serializeArray(),
-                success: function(){
+                url: "https://api.apispreadsheets.com/data/XEVQj1gUX7Dp9Riu/",
+                type: "post",
+                data: $("#form2").serializeArray(),
+                success: function () {
                     btn.setAttribute('value', 'Küldés');
                     alert("Sikeres üzenetküldés!");
                 },
-                error: function(){
+                error: function () {
                     btn.setAttribute('value', 'Küldés');
                     alert("Hiba történt az üzenet rögzítése során. Kérem próbálja újra!");
                 }
@@ -96,7 +96,7 @@
 
                 <section class="features">
                     <article>
-                        <img alt="" class="image" src="images/WeiszAgoston.jpg"/>
+                        <img alt="" class="image" src="images/team/WeiszAgoston.jpg"/>
                         <h3 class="major">Weisz Ágoston</h3>
                         <h4>Főszervező</h4>
                         <p class="dropdown-text" id="Weisz-Agoston">Weisz Ágoston 5 éve a Google-nél dolgozik Zürichben,
@@ -107,7 +107,7 @@
                         <a class="special" onclick="toggle('Weisz-Agoston', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/SzaboKornel.jpg"/>
+                        <img alt="" class="image" src="images/team/SzaboKornel.jpg"/>
                         <h3 class="major">Szabó Kornél</h3>
                         <h4>Főszervező és front-end fejlesztő</h4>
                         <p class="dropdown-text" id="Szabo-Kornel">Szabó Kornél vagyok, a Cambridge-i Egyetem
@@ -124,7 +124,7 @@
                         <a class="special" onclick="toggle('Szabo-Kornel', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/VeressKrisztian.jpg"/>
+                        <img alt="" class="image" src="images/team/VeressKrisztian.jpg"/>
                         <h3 class="major">Veress Krisztián</h3>
                         <h4>Versenybizottsági tag</h4>
                         <p class="dropdown-text" id="Veress-Krisztian">Veress Krisztián vagyok, ex-Googler, business
@@ -147,7 +147,7 @@
                         <a class="special" onclick="toggle('Veress-Krisztian', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/NikhazyLaszlo.jpg"/>
+                        <img alt="" class="image" src="images/team/NikhazyLaszlo.jpg"/>
                         <h3 class="major">Nikházy László</h3>
                         <h4>A Versenybizottság elnöke</h4>
                         <p class="dropdown-text" id="Nikhazy-Laszlo">Nikházy László a Google-s és NNG-s pályafutása után
@@ -157,7 +157,7 @@
                         <a class="special" onclick="toggle('Nikhazy-Laszlo', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/SzokeNora.jpg"/>
+                        <img alt="" class="image" src="images/team/SzokeNora.jpg"/>
                         <h3 class="major">Szőke Nóra</h3>
                         <h4>Versenybizottsági tag és front-end fejlesztő</h4>
                         <p class="dropdown-text" id="Szoke-Nora">Szőke Nóra vagyok, matematikus és webfejlesztő.
@@ -178,10 +178,67 @@
                         <a class="special" onclick="toggle('Szoke-Nora', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/SzaboIvett.jpg"/>
+                        <img alt="" class="image" src="images/team/TiszayDavid.jpg"/>
+                        <h3 class="major">Tiszay Dávid</h3>
+                        <h4>A Szakmai Bizottság tagja</h4>
+                        <p class="dropdown-text" id="Tiszay-David">
+                            Tiszay Dávid vagyok, az ELTE programtervező informatikus szakos hallgatója.
+                            Középiskolai tanulmányaimat a Budapesti Fazekas Gimnáziumban végeztem speciális matematika
+                            tagozaton. Tagja voltam a Pósa-tábor sorozatnak, ahol egyedi gondolkodásmódot tanultam,
+                            egyenesen Magyarország egyik legnagyobb matematikusától. Az évek során sokat foglalkoztam
+                            versenyprogramozással, számos matematika és programozóversenyen értem el helyezést. Az
+                            Alphacademyben gimnáziumi éveim végén kezdtem el tanítani, de már korábban is tartottam
+                            szakkört matek tagozatos diákoknak. Szabadidőmben sokat sportolok (országúti kerékpár,
+                            tenisz), illetve stratégiai társasjátékokat játszom.
+                        </p>
+                        <a class="special" onclick="toggle('Tiszay-David', this);">Bővebb információ</a>
+                    </article>
+                    <article>
+                        <img alt="" class="image" src="images/team/VarkonyiZsombor.jpg"/>
+                        <h3 class="major">Várkonyi Zsombor</h3>
+                        <h4>A Szakmai Bizottság tagja</h4>
+                        <p class="dropdown-text" id="Varkonyi-Zsombor">
+                            Várkonyi Zsombor vagyok, az Eötvös Loránd Tudományegyetem elsőéves matematika szakos
+                            hallgatója. Középiskolás éveimben a Budapesti Fazekas speciális matematika tagozatára
+                            jártam, itt is érettségiztem 2021-ben. A matematika mellett mindig is érdekelt a
+                            programozás, azonban komolyabb versenyeken matekból voltam. Hazai versenyek közül az OKTV 3.
+                            kategóriájában 5. és 2. lettem, emellett képviseltem az országot a Közép-Európai Matematikai
+                            Olimpián (MEMO), ahol aranyérmet nyertem és a Nemzetközi Matematikai Diákolimpián (IMO),
+                            ahol ezüstöt. Nagyon szeretek tanítani, már 5 éve vagyok matektáborok önkéntes szervezője,
+                            az Alphacademy-hez 2021 elején csatlakoztam. Szabadidőmben általában sportolni, olvasni,
+                            kirándulni vagy a barátaimmal társasjátékozni szoktam.
+                        </p>
+                        <a class="special" onclick="toggle('Varkonyi-Zsombor', this);">Bővebb információ</a>
+                    </article>
+                    <article>
+                        <img alt="" class="image" src="images/team/TothGellert.jpg"/>
+                        <h3 class="major">Tóth Gellért</h3>
+                        <h4>A Szakmai Bizottság tagja</h4>
+                        <p class="dropdown-text" id="Toth-Gellert">
+                            Tóth Gellért vagyok a hollandiai Radboud University elsőéves hallgatója, Artificial
+                            Intelligence-t tanulok. Az Óbudai Árpád Gimnázium matek szakán végeztem. Matematikából
+                            hatalmas
+                            sikereket nem értem el, ez persze nem jelenti azt hogy, az emelt érettségi egy másodpercig
+                            is
+                            megakasztott volna, viszont mivel a programozás mindig is jobban érdekelt az abba
+                            befektetett
+                            extra idő meghozta a gyümölcsét. A 2021-es nemzetközi informatika diákolimpián és a 2020-as
+                            közép-európai informatika diákolimipán is ezüstérmes lettem, magyar vonatkozásból pedig az
+                            OKTV 4.
+                            helyemre lehetek büszke, habár pont az kicsit csalódás volt számomra.<br>
+                            A diákolimpia után keresett meg Ágoston, hogy szeretnék-e informatikaoktatással foglalkozni,
+                            de
+                            már korábban is voltak tanítással tapasztalataim. Mentoráltam vidéki diákokat matematikából
+                            és a
+                            saját sulimban egyik osztálytársammal infó szakkört vezettünk több-kevesebb sikkerel.
+                        </p>
+                        <a class="special" onclick="toggle('Toth-Gellert', this);">Bővebb információ</a>
+                    </article>
+                    <article>
+                        <img alt="" class="image" src="images/team/SzaboIvett.jpg"/>
                         <h3 class="major">Szabó Ivett</h3>
                         <h4>Versenybizottsági tag</h4>
-                        <p class="dropdown-text" id="Szabo-Anita">
+                        <p class="dropdown-text" id="Szabo-Ivett">
                             Vallom, hogy minden gyermekben fel lehet kelteni az érdeklődést a matematika és a
                             programozás iránt.<br>
                             A tanulás során megszerzett ismereteiket a gyerekek hasznosítani tudják életük minden
@@ -190,7 +247,7 @@
                         <a class="special" onclick="toggle('Szabo-Ivett', this);">Bővebb információ</a>
                     </article>
                     <article>
-                        <img alt="" class="image" src="images/BoraEszter.jpg"/>
+                        <img alt="" class="image" src="images/team/BoraEszter.jpg"/>
                         <h3 class="major">Bóra Eszter</h3>
                         <h4>Versenybizottsági tag</h4>
                         <p class="dropdown-text" id="Bora-Eszter">
@@ -229,7 +286,8 @@
                     </div>
                 </div>
                 <ul class="actions">
-                    <li><input type="button" id="form2-button" onclick="if(verifyForm('form2')){SubForm();}" value="Küldés"/></li>
+                    <li><input id="form2-button" onclick="if(verifyForm('form2')){SubForm();}" type="button"
+                               value="Küldés"/></li>
                 </ul>
             </form>
             <script>initForm('form2');</script>
