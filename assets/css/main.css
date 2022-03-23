@@ -2424,6 +2424,10 @@ input, select, textarea {
 		position: relative;
 	}
 
+		.image.noborder{
+			border-radius: 0 !important;
+		}
+
 		.image img {
 			border-radius: 15px;
 			display: block;
@@ -3006,6 +3010,73 @@ input, select, textarea {
 			}
 
 		}
+		/*  From here, we added these to replace a tags with button tags at Bővebb inform  */
+		button.special{
+			background-color: transparent;
+			padding: 0;
+			border-radius: 0;
+			box-shadow: none;
+
+		}
+
+
+		button.special:not(.button) {
+			text-decoration: none;
+			border-bottom: 0;
+			display: block;
+			font-family: Raleway, Helvetica, sans-serif;
+			font-size: 0.75em;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			margin: 0 0 2em 0;
+			text-transform: uppercase;
+		}
+
+		button.special:not(.button):before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			display: inline-block;
+			font-style: normal;
+			font-variant: normal;
+			text-rendering: auto;
+			line-height: 1;
+			text-transform: none !important;
+			font-family: 'Font Awesome 5 Free';
+			font-weight: 900;
+		}
+
+		button.special:not(.button):before {
+			-moz-transition: background-color 0.2s ease-in-out;
+			-webkit-transition: background-color 0.2s ease-in-out;
+			-ms-transition: background-color 0.2s ease-in-out;
+			transition: background-color 0.2s ease-in-out, transform 0.5s;
+			border-radius: 100%;
+			border: solid 2px rgba(255, 255, 255, 0.125);
+			content: '\f105';
+			display: inline-block;
+			font-size: 1em;
+			height: 2em;
+			line-height: 1.75em;
+			margin-right: 0.5em;
+			text-align: center;
+			text-indent: 0.15em;
+			vertical-align: middle;
+			width: 2em;
+		}
+
+		button.special.open:before{
+			transform: rotate(-90deg);
+		}
+
+		button.special:not(.button):hover:before {
+			background-color: rgba(255, 255, 255, 0.025); /* kerek gomb szine egerrel */
+		}
+
+		button.special:not(.button):active:before {
+			background-color: rgba(255, 255, 255, 0.075); /* kerek gomb szine katt utan */
+		}
+
+		/* end of replacing a tags with button tags */
 
 #responsive-image {  width: 100%;  height: auto; } 
 
@@ -4186,3 +4257,4 @@ input, select, textarea {
 		}
 
 	}
+
